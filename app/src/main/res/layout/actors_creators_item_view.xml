@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/ivPoser"
+        android:layout_width="170dp"
+        android:layout_height="230dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/tomhank"
+        android:layout_margin="@dimen/margin_medium"/>
+
+    <ImageView
+        android:id="@+id/ivFavourite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@id/ivPoser"
+        android:layout_marginTop="@dimen/margin_medium_3"
+        android:layout_marginEnd="@dimen/margin_medium"
+        android:src="@drawable/ic_baseline_favorite_border_24" />
+
+    <org.mmtextview.components.MMTextView
+        android:id="@+id/tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tom Hank"
+        android:textColor="@android:color/white"
+        android:layout_alignStart="@id/tvLikeCount"
+        android:layout_above="@id/tvLikeCount"
+        android:textStyle="bold"
+        android:textSize="@dimen/text_regular_3x"
+        />
+
+    <org.mmtextview.components.MMTextView
+        android:id="@+id/tvLikeCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/ivPoser"
+        android:drawableStart="@drawable/ic_baseline_thumb_up_24"
+        android:drawablePadding="@dimen/margin_medium"
+        android:textSize="@dimen/text_small"
+        android:text="YOU LIKE 13 MOVIES"
+        android:textColor="@android:color/darker_gray"
+        android:layout_alignStart="@id/ivPoser"
+        android:layout_alignEnd="@id/ivPoser"
+        android:layout_margin="@dimen/margin_medium"
+        />
+
+
+</RelativeLayout>

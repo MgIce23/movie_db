@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/margin_medium"
+    >
+
+    <ImageView
+        android:id="@+id/ivPoster"
+        android:layout_width="150dp"
+        android:layout_height="250dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/poster"/>
+
+    <org.mmtextview.components.MMTextView
+        android:id="@+id/tvMovieTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hacksaw_ridge"
+        android:layout_alignEnd="@id/ivPoster"
+        android:textColor="@android:color/white"
+        android:layout_below="@id/ivPoster"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:layout_alignStart="@id/ivPoster"
+        android:textSize="@dimen/text_regular"
+        />
+
+    <org.mmtextview.components.MMTextView
+        android:id="@+id/ivMovieRate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/rating"
+        android:textColor="@android:color/white"
+        android:layout_below="@id/tvMovieTitle"
+        android:layout_alignStart="@id/tvMovieTitle"
+        android:textSize="@dimen/text_regular"
+        android:layout_marginTop="@dimen/margin_medium"
+        />
+
+    <androidx.appcompat.widget.AppCompatRatingBar
+        android:id="@+id/ratingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/ivMovieRate"
+        android:layout_alignTop="@id/ivMovieRate"
+        android:layout_marginStart="@dimen/margin_medium"
+        android:rating="5"
+        android:progressTint="@color/yellow"
+        style="@style/Widget.AppCompat.RatingBar.Small"
+        />
+
+
+</RelativeLayout>

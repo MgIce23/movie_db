@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <org.mmtextview.components.MMTextView
+        android:id="@+id/tvLabelTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/LabelTextStyle"
+        android:text="Original title"/>
+
+    <org.mmtextview.components.MMTextView
+        android:id="@+id/tvOriginalTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/original_title"
+       style="@style/AbooutFlimTextStyle"
+        android:layout_alignTop="@id/tvLabelTitle"
+        android:layout_toEndOf="@id/tvLabelTitle"
+        android:layout_marginStart="@dimen/margin_medium_2"
+        android:textColor="@android:color/white"
+        />
+
+    <org.mmtextview.components.MMTextView
+        android:id="@+id/tvLabelType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/type"
+        style="@style/LabelTextStyle"
+        android:layout_below="@id/tvOriginalTitle"
+        android:layout_marginTop="@dimen/margin_medium_2"/>
+    <org.mmtextview.components.MMTextView
+        android:id="@+id/tvType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Family,Fantansty,Adventure"
+        android:layout_alignTop="@id/tvLabelType"
+        style="@style/AbooutFlimTextStyle"
+        android:layout_alignStart="@id/tvOriginalTitle"
+        />
+
+    <org.mmtextview.components.MMTextView
+        android:id="@+id/tvLabelProduction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/production"
+        android:layout_below="@id/tvType"
+        android:layout_marginTop="@dimen/margin_medium_2"
+        style="@style/LabelTextStyle"/>
+    <org.mmtextview.components.MMTextView
+        android:id="@+id/tvProduction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/tvLabelProduction"
+        android:layout_alignStart="@id/tvType"
+        style="@style/AbooutFlimTextStyle"
+        android:text="@string/united_kingdom_usa"/>
+
+    <org.mmtextview.components.MMTextView
+        android:id="@+id/tvLabelPremiere"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/premiere"
+        android:layout_below="@id/tvProduction"
+        android:layout_marginTop="@dimen/margin_medium_2"
+        style="@style/LabelTextStyle"/>
+
+    <TextView
+        android:id="@+id/tvPremiere"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/_8_november_2016_world"
+        style="@style/AbooutFlimTextStyle"
+        android:layout_alignTop="@id/tvLabelPremiere"
+        android:layout_alignStart="@id/tvProduction"/>
+
+    <org.mmtextview.components.MMTextView
+        android:id="@+id/tvLabelDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/description"
+        android:layout_below="@id/tvLabelPremiere"
+        android:layout_marginTop="@dimen/margin_medium_2"
+        style="@style/LabelTextStyle"/>
+
+    <org.mmtextview.components.MMTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="This Films Begins In 1926"
+        style="@style/AbooutFlimTextStyle"
+        android:layout_alignTop="@id/tvLabelDescription"
+        android:layout_alignStart="@id/tvPremiere"/>
+
+</RelativeLayout>

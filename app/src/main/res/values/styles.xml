@@ -1,0 +1,31 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/dark</item>
+        <item name="colorPrimaryDark">@color/dark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@color/dark</item>
+    </style>
+    
+    <style name="ShowCaseTextStyle">
+        <item name="android:textColor">@android:color/darker_gray</item>
+        <item name="android:textSize">@dimen/text_regular</item>
+    </style>
+    <style name="ShowCaseSecondTextStyle">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="LabelTextStyle">
+        <item name="android:textColor">@android:color/darker_gray</item>
+        <item name="android:textSize">@dimen/text_regular_2x</item>
+    </style>
+
+    <style name="AbooutFlimTextStyle">
+        <item name="android:textSize">@dimen/text_regular_2x</item>
+        <item name="android:textColor">@android:color/white</item>
+
+    </style>
+
+</resources>

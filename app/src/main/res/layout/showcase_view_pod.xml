@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <org.mmtextview.components.MMTextView
+        android:id="@+id/tvShowCase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SHOWCASES"
+        android:textColor="@android:color/darker_gray"
+        android:layout_marginTop="@dimen/margin_medium_2"
+        android:layout_marginStart="@dimen/margin_medium_2"/>
+
+    <org.mmtextview.components.MMTextView
+        android:id="@+id/tvMoreShowCase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MORE SHOWCASES"
+        style="@style/ShowCaseSecondTextStyle"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="@dimen/margin_medium_2"
+        android:layout_marginTop="@dimen/margin_medium_2"
+        android:autoLink="all"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvShowCase"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvShowCase"
+        android:orientation="horizontal"
+        android:layout_alignStart="@id/tvShowCase"
+        android:layout_alignEnd="@id/tvMoreShowCase"
+        tools:listitem="@layout/showcase_item_view"/>
+</RelativeLayout>

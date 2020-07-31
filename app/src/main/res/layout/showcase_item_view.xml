@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        app:cardUseCompatPadding="true"
+        app:cardElevation="@dimen/margin_small"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/ivPoster"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/tomhank"
+                android:scaleType="centerCrop"
+                />
+
+            <org.mmtextview.components.MMTextView
+                android:id="@+id/tvMovieTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/tvShowtime"
+                android:layout_alignStart="@id/tvShowtime"
+                android:text="Passengers"
+                android:layout_marginBottom="@dimen/margin_medium"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/text_regular_3x"
+                android:textStyle="bold" />
+
+            <org.mmtextview.components.MMTextView
+                android:id="@+id/tvShowtime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:textColor="@android:color/darker_gray"
+                android:layout_marginBottom="@dimen/margin_medium_2"
+                android:layout_marginStart="@dimen/margin_medium_2"
+                android:text="15 DECEMBER" />
+
+            <ImageView
+                android:layout_width="@dimen/margin_xxlarge"
+                android:layout_height="@dimen/margin_xxlarge"
+                android:src="@drawable/ic_baseline_play_circle_filled_24"
+                android:layout_centerInParent="true"
+                />
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

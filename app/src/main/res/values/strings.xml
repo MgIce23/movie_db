@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">PADCX-MovieApp-APS</string>
+    <string name="hacksaw_ridge">Hacksaw Ridge</string>
+    <string name="rating">9.89</string>
+    <string name="discover">Discover</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="story_line">The adventures of writer Newt Scamander in New York\'s secret community of witches and wizards seventy years before Harry Potter reads his book in school.</string>
+    <string name="play_trailer">PLAY TRAILER</string>
+    <string name="rate_movie">RATE MOVIE</string>
+    <string name="original_title">Fantastic Beasts and Where to Find Them</string>
+    <string name="type">Type</string>
+    <string name="production">Production</string>
+    <string name="united_kingdom_usa">United Kingdom, USA</string>
+    <string name="premiere">Premiere</string>
+    <string name="_8_november_2016_world">8 November 2016 (World)</string>
+    <string name="description">Description</string>
+</resources>
