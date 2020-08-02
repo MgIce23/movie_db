@@ -21,8 +21,8 @@
     <ImageView
         android:id="@+id/ivPoster"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:scaleType="centerCrop"
+        android:layout_height="350dp"
+        android:scaleType="fitXY"
         />
 
     <RelativeLayout
@@ -30,8 +30,9 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            android:layout_width="@dimen/margin_large"
-            android:layout_height="@dimen/margin_large"
+            android:id="@+id/ivBack"
+            android:layout_width="@dimen/margin_xlarge"
+            android:layout_height="@dimen/margin_xlarge"
             android:padding="@dimen/margin_medium"
             android:background="@drawable/circle_drawable"
             android:layout_margin="@dimen/margin_medium_2"
@@ -48,9 +49,10 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="200dp"
         >
         <org.mmtextview.components.MMTextView
+            android:id="@+id/tvYear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="2016"
@@ -138,7 +140,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
-                android:layout_weight="1"
                 app:layout_constraintEnd_toStartOf="@+id/ivFavourite"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/tvDuration"

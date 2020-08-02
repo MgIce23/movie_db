@@ -9,7 +9,13 @@ const val BASE_URL = "https://api.themoviedb.org/3/"
  const val GET_POPULAR_ACTOR = "person/popular"
  const val GET_TOP_RATED_MOVIES = "movie/top_rated"
 
+ const val GET_CAST_AND_CREW = "movie/{movie_id}/credits"
+ const val GET_GENERS_LIST = "genre/movie/list"
+
  const val GET_MOVIE_DETAILS = "movie/{movie_id}"
+ const val GET_MOVIE_WITH_GENER = "discover/movie"
+
+ const val GET_VIDEO = "movie/{movie_id}/videos"
 
  const val API_KEY = "f29950b90a97d6ced65821a923e55012"
 

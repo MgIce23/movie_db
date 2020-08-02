@@ -1,10 +1,10 @@
 package com.aungpyaesone.firebasetest.padcx_movieapp_aps.network
 
+import com.aungpyaesone.firebasetest.padcx_movieapp_aps.datas.vos.CastAndCrewVO
+import com.aungpyaesone.firebasetest.padcx_movieapp_aps.datas.vos.GenersVO
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.datas.vos.MovieVO
-import com.aungpyaesone.firebasetest.padcx_movieapp_aps.network.responses.GetAllPopularPeopleResponse
-import com.aungpyaesone.firebasetest.padcx_movieapp_aps.network.responses.GetNowPlayingMovieListRespone
-import com.aungpyaesone.firebasetest.padcx_movieapp_aps.network.responses.GetPopularMovieListResponse
-import com.aungpyaesone.firebasetest.padcx_movieapp_aps.network.responses.GetTopRatedMovieResponse
+import com.aungpyaesone.firebasetest.padcx_movieapp_aps.datas.vos.MovieWithGenerVO
+import com.aungpyaesone.firebasetest.padcx_movieapp_aps.network.responses.*
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.utils.*
 import io.reactivex.Observable
 import retrofit2.http.GET
@@ -28,4 +28,18 @@ interface ClientApi {
     @GET(GET_MOVIE_DETAILS)
     fun getMovieDetails(@Path("movie_id") movieId:Int,@Query("api_key")apiKey: String): Observable<MovieVO>
 
+    @GET(GET_CAST_AND_CREW)
+    fun getCastAndCrew(@Path("movie_id")movieId: Int,@Query("api_key")apiKey: String):Observable<CastAndCrewVO>
+
+    @GET(GET_GENERS_LIST)
+    fun getGenerList(@Query("api_key")apiKey: String):Observable<GetAllGenerResponse>
+
+    @GET(GET_MOVIE_WITH_GENER)
+    fun getWithGenerList(@Query("api_key")apiKey: String,
+                         @Query("with_genres")with_genres: String
+    ):Observable<GetMovieWithGenerResponse>
+
+    @GET(GET_VIDEO)
+    fun getVideo(@Path("movie_id")movieId: Int,@Query("api_key")apiKey: String)
+    :Observable<GetVideoResponse>
 }

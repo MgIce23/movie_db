@@ -5,24 +5,28 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import androidx.core.view.size
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.R
+import com.aungpyaesone.firebasetest.padcx_movieapp_aps.adapter.ActorListAdapter
+import com.aungpyaesone.firebasetest.padcx_movieapp_aps.adapter.CeatorAdapter
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.adapter.PopularPeopleAdapter
-import com.aungpyaesone.firebasetest.padcx_movieapp_aps.datas.vos.MovieVO
-import com.aungpyaesone.firebasetest.padcx_movieapp_aps.datas.vos.PeopleVO
-import com.aungpyaesone.firebasetest.padcx_movieapp_aps.datas.vos.PopularMovieVO
+import com.aungpyaesone.firebasetest.padcx_movieapp_aps.datas.vos.*
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.mvp.presenters.MovieDetailPresenter
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.mvp.presenters.presenterImpls.MovieDetailPresenterImpl
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.mvp.views.MovieDetailView
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.utils.IMAGE_BASE_URL
+import com.aungpyaesone.firebasetest.padcx_movieapp_aps.utils.createDynamicChip
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.activity_movie_detail.*
 
 class MovieDetailActivity : BaseActivity() , MovieDetailView{
 
     private var mPresenter : MovieDetailPresenter? = null
-    private lateinit var mPopularPeopleAdapter : PopularPeopleAdapter
+    private lateinit var mCreatorAdapter: CeatorAdapter
+    private lateinit var mActorAdapter: ActorListAdapter
 
     companion object{
         const val KEY = "key"
@@ -40,15 +44,24 @@ class MovieDetailActivity : BaseActivity() , MovieDetailView{
         setUpPresenter()
         setUpData()
         setupRecycler()
+        setUpListener()
         mPresenter?.onUiReady(movieId,this)
     }
 
+    private fun setUpListener(){
+        ivBack.setOnClickListener {
+            onBackPressed()
+        }
+    }
+
     private fun setupRecycler(){
-        mPopularPeopleAdapter = PopularPeopleAdapter()
+        mActorAdapter= ActorListAdapter()
         rvActors.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL,false)
-        rvActors.adapter = mPopularPeopleAdapter
+        rvActors.adapter = mActorAdapter
+
+        mCreatorAdapter = CeatorAdapter()
         rvCreator.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
-        rvCreator.adapter = mPopularPeopleAdapter
+        rvCreator.adapter = mCreatorAdapter
     }
 
     private fun setUpData(){
@@ -64,20 +77,38 @@ class MovieDetailActivity : BaseActivity() , MovieDetailView{
         Glide.with(applicationContext)
             .load(IMAGE_BASE_URL + data.poster_path)
             .into(ivPoster)
+        tvYear.text = data.release_date.substringBefore("-")
         tvRating.text = data.vote_average.toString()
         tvVote.text = data.vote_count.toString() + "   VOTES"
         tvMovieTitle.text = data.original_title
-        chipOne.text = data.genres.get(0).name
-        chipTwo.text = data.genres.get(1).name
+        Log.d("Tag",data.genres.size.toString())
+     //   createDynamicChip(data.genres,chipGroup)
         tvStoryLine.text = data.overview
         tvOriginalTitle.text = data.original_title
-        tvType.text = chipOne.text.toString() + chipTwo.text + chipThree.text.toString()
+        tvType.text = showType(data.genres)
         tvProduction.text = data.production_countries.get(0).name
+        tvDescription.text = data.overview
     }
 
-    override fun showActorList(dataList: List<PeopleVO>) {
-        mPopularPeopleAdapter.setData(dataList)
+    private fun showType(dataList:List<GenersVO>):String{
+        var result : String = " "
+        for(data in dataList){
+            result += data.name
+            result += " "
+        }
+        return result
+
     }
+
+    override fun showActorList(dataList: List<CastVO>) {
+        mActorAdapter.setData(dataList.toMutableList())
+
+    }
+
+    override fun showCreatorList(dataList: List<CrewVO>) {
+       mCreatorAdapter.setData(dataList.toMutableList())
+    }
+
 
     override fun showErrorMessage(error: String) {
        showSnackBar(error)

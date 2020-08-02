@@ -2,6 +2,8 @@ package com.aungpyaesone.firebasetest.padcx_movieapp_aps.mvp.presenters.presente
 
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.Observer
+import com.aungpyaesone.firebasetest.padcx_movieapp_aps.datas.models.GenerListModel
+import com.aungpyaesone.firebasetest.padcx_movieapp_aps.datas.models.GenerModelImpl
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.datas.models.TopRateMovieModel
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.datas.models.TopRatedMovieImpl
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.datas.vos.TopRatedVO
@@ -12,12 +14,21 @@ import com.aungpyaesone.firebasetest.padcx_movieapp_aps.mvp.views.TopRatedMovieV
 class TopRatedMoviePresenterImpl : TopRatedMoviePresenter,AbstractBasePresenter<TopRatedMovieView>() {
 
     private val mTopRatedMovie: TopRateMovieModel = TopRatedMovieImpl
-    override fun onUiReady(lifecycleOwner: LifecycleOwner) {
-        mTopRatedMovie.getAllTopMovieList {
+    private val mGenerList: GenerListModel  = GenerModelImpl
+    override fun onUiReady(gener:String,lifecycleOwner: LifecycleOwner) {
+//        mTopRatedMovie.getAllTopMovieList {
+//            mView?.showErrorMessage(it)
+//        }.observe(lifecycleOwner, Observer {
+//            mView?.showTopRatedMovieList(it)
+//        })
+        mGenerList.getMovieWithGereFromApiSaveToDB(gener,{},{
             mView?.showErrorMessage(it)
-        }.observe(lifecycleOwner, Observer {
-            mView?.showTopRatedMovieList(it)
         })
+        mGenerList.getMovieWithGenerList().observe(
+            lifecycleOwner, Observer {
+                mView?.showTopRatedMovieList(it)
+            }
+        )
     }
 
     override fun onTouchRatedMovie(id: Int) {

@@ -1,9 +1,6 @@
 package com.aungpyaesone.firebasetest.padcx_movieapp_aps.mvp.views
 
-import com.aungpyaesone.firebasetest.padcx_movieapp_aps.datas.vos.MovieVO
-import com.aungpyaesone.firebasetest.padcx_movieapp_aps.datas.vos.NowPlayingVO
-import com.aungpyaesone.firebasetest.padcx_movieapp_aps.datas.vos.PeopleVO
-import com.aungpyaesone.firebasetest.padcx_movieapp_aps.datas.vos.PopularMovieVO
+import com.aungpyaesone.firebasetest.padcx_movieapp_aps.datas.vos.*
 
 interface MovieHomeView : BaseView {
 
@@ -16,5 +13,7 @@ interface MovieHomeView : BaseView {
     fun showPosterList(posterList: List<PopularMovieVO>)
 
     fun navigateToDetail(id: Int)
+
+    fun sendGenerList(generList:List<GenersVO>)
 
 }

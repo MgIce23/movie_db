@@ -5,5 +5,5 @@ import com.aungpyaesone.firebasetest.padcx_movieapp_aps.delegate.TopRatedMovieIt
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.mvp.views.TopRatedMovieView
 
 interface TopRatedMoviePresenter : BasePresenter<TopRatedMovieView>,TopRatedMovieItemDelegate {
-    fun onUiReady(lifecycleOwner: LifecycleOwner)
+    fun onUiReady(gener:String,lifecycleOwner: LifecycleOwner)
 }

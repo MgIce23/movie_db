@@ -9,9 +9,10 @@ import com.aungpyaesone.firebasetest.padcx_movieapp_aps.mvp.views.MovieHomeView
 
 class MovieHomePresenterImpl : MovieHomePresenter,AbstractBasePresenter<MovieHomeView>() {
    // private val mBestPopularFilAndSerial: BestPopularFilmAndSerialModel = BestPopularFilmAndSerialImpl()
-    private val mPopularMovie : PopularMovieModel = PopularMovieImpl
-    private val mNowPalyingMovie : NowPlayingMovieModel = NowPlayingMovieImpl
-    private val mPopularPeople: PopularPeopleModel = PopularPeopleImpl
+     var mPopularMovie : PopularMovieModel = PopularMovieImpl
+     var mNowPalyingMovie : NowPlayingMovieModel = NowPlayingMovieImpl
+    var mPopularPeople: PopularPeopleModel = PopularPeopleImpl
+     var mGener: GenerListModel = GenerModelImpl
 
 
     override fun onUiReady(lifecycleOwner: LifecycleOwner) {
@@ -37,6 +38,15 @@ class MovieHomePresenterImpl : MovieHomePresenter,AbstractBasePresenter<MovieHom
             mView?.showErrorMessage(it)
         }.observe(lifecycleOwner, Observer {
             mView?.showPosterList(it)
+        })
+
+        mGener.getGenersListFromApiSaveToDB({},{
+            mView?.showErrorMessage(it)
+        })
+        mGener.getAllGenerList {
+            mView?.showErrorMessage(it)
+        }.observe(lifecycleOwner, Observer {
+            mView?.sendGenerList(it)
         })
 
 

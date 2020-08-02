@@ -17,6 +17,7 @@ class MovieApp : Application(){
         PopularPeopleImpl.initDatabase(applicationContext)
         TopRatedMovieImpl.initDatabase(applicationContext)
         MovieDetailImpl.initDatabase(applicationContext)
+        GenerModelImpl.initDatabase(applicationContext)
 
         getPopularMovieOneTime()
         getNowPlayingMovieOneTime()

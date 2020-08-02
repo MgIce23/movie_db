@@ -5,29 +5,27 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.R
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.adapter.*
-import com.aungpyaesone.firebasetest.padcx_movieapp_aps.datas.dummy.getSlider
-import com.aungpyaesone.firebasetest.padcx_movieapp_aps.datas.vos.MovieVO
+import com.aungpyaesone.firebasetest.padcx_movieapp_aps.datas.vos.GenersVO
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.datas.vos.NowPlayingVO
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.datas.vos.PeopleVO
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.datas.vos.PopularMovieVO
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.mvp.presenters.MovieHomePresenter
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.mvp.presenters.presenterImpls.MovieHomePresenterImpl
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.mvp.views.MovieHomeView
-import com.aungpyaesone.firebasetest.padcx_movieapp_aps.utils.SliderTimer
-import kotlinx.android.synthetic.main.activity_movie_detail.*
 import kotlinx.android.synthetic.main.activity_movie_detail.rvActors
 import kotlinx.android.synthetic.main.activity_movie_home.*
-import kotlinx.android.synthetic.main.actor_view_pod.*
 import kotlinx.android.synthetic.main.showcase_view_pod.*
-import java.util.*
 
 class MovieHomeActivity : BaseActivity(), MovieHomeView {
     private lateinit var mSliderAdapter: SliderAdapter
     private lateinit var mPresenter : MovieHomePresenter
     private lateinit var mBestPopularFlimAdapter: BestPopularFlimAdapter
-    private lateinit var mViewPagerAdapter: ViewPagerAdapter
+ //   private lateinit var mViewPagerAdapter: ViewPagerAdapter
     private lateinit var mNowPlayingMovieAdapter : NowPlayingMovieAdapter
     private lateinit var mPopularPeopleAdapter : PopularPeopleAdapter
+    private lateinit var mPagerAdapter: DynamicPagerAdapter
+
+    private var mGenerList = arrayListOf<GenersVO>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -65,9 +63,9 @@ class MovieHomeActivity : BaseActivity(), MovieHomeView {
     }
 
     private fun setUpViewPager(){
-        mViewPagerAdapter = ViewPagerAdapter(supportFragmentManager)
-        generViewPager.adapter = mViewPagerAdapter
-        tabLayout.setupWithViewPager(generViewPager)
+      //  mViewPagerAdapter = ViewPagerAdapter(supportFragmentManager)
+
+
     }
 
     override fun showPopularMovie(popularMovie: List<PopularMovieVO>) {
@@ -87,7 +85,13 @@ class MovieHomeActivity : BaseActivity(), MovieHomeView {
     }
 
     override fun navigateToDetail(id: Int) {
-        startActivity(MovieDetailActivity.newIntent(this,id))
+        startActivity(VideoViewActivity.newIntent(this,id))
+    }
+
+    override fun sendGenerList(generList: List<GenersVO>) {
+        mPagerAdapter = DynamicPagerAdapter(generList,supportFragmentManager)
+        generViewPager.adapter = mPagerAdapter
+        tabLayout.setupWithViewPager(generViewPager)
     }
 
     override fun showErrorMessage(error: String) {

@@ -1,6 +1,7 @@
 package com.aungpyaesone.firebasetest.padcx_movieapp_aps.views.viewholders
 
 import android.view.View
+import com.aungpyaesone.firebasetest.padcx_movieapp_aps.datas.vos.MovieWithGenerVO
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.datas.vos.TopRatedVO
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.delegate.TopRatedMovieItemDelegate
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.utils.IMAGE_BASE_URL
@@ -8,7 +9,7 @@ import com.bumptech.glide.Glide
 
 import kotlinx.android.synthetic.main.movie_poster_item_view.view.*
 
-class TopMovieViewHolder(itemView: View,val mDelegate:TopRatedMovieItemDelegate) : BaseViewHolder<TopRatedVO>(itemView){
+class TopMovieViewHolder(itemView: View,val mDelegate:TopRatedMovieItemDelegate) : BaseViewHolder<MovieWithGenerVO>(itemView){
 
     init {
         itemView.setOnClickListener {
@@ -19,7 +20,7 @@ class TopMovieViewHolder(itemView: View,val mDelegate:TopRatedMovieItemDelegate)
         }
     }
 
-    override fun bindData(data: TopRatedVO) {
+    override fun bindData(data: MovieWithGenerVO) {
         mData = data
 
 

@@ -2,6 +2,7 @@ package com.aungpyaesone.firebasetest.padcx_movieapp_aps.datas.models
 
 import android.annotation.SuppressLint
 import androidx.lifecycle.LiveData
+import com.aungpyaesone.firebasetest.padcx_movieapp_aps.datas.vos.MovieResultVO
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.datas.vos.PopularMovieVO
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.utils.API_KEY
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.utils.EN_ERROR_MESSAGE
@@ -33,5 +34,18 @@ object PopularMovieImpl : BaseModel(),PopularMovieModel {
 
     override fun getPosterPath(onError: (String) -> Unit): LiveData<List<PopularMovieVO>> {
         return mTheDB.moviesDao().getPosterPath()
+    }
+
+    @SuppressLint("CheckResult")
+    override fun getVideoFromApi(movieId:Int, onSuccess: (List<MovieResultVO>) -> Unit, onError: (String) -> Unit) {
+        mClientApi.getVideo(movieId,API_KEY).map {
+            it.result.toList()
+        }.subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe({
+                it.let { onSuccess(it) }
+            },{
+                onError(it.localizedMessage ?: EN_ERROR_MESSAGE)
+            })
     }
 }

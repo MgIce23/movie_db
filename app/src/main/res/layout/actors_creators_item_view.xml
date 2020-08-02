@@ -24,12 +24,13 @@
         android:id="@+id/tvName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignEnd="@id/ivPoser"
         android:text="Tom Hank"
         android:textColor="@android:color/white"
         android:layout_alignStart="@id/tvLikeCount"
         android:layout_above="@id/tvLikeCount"
         android:textStyle="bold"
-        android:textSize="@dimen/text_regular_3x"
+        android:textSize="@dimen/text_regular"
         />
 
     <org.mmtextview.components.MMTextView

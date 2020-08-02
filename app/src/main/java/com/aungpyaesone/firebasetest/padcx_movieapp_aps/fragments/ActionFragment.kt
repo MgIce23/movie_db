@@ -10,9 +10,13 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.R
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.activities.MovieDetailActivity
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.adapter.TopRatedMovieAdapter
+import com.aungpyaesone.firebasetest.padcx_movieapp_aps.datas.models.GenerModelImpl
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.datas.models.TopRatedMovieImpl
+import com.aungpyaesone.firebasetest.padcx_movieapp_aps.datas.vos.MovieWithGenerVO
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.datas.vos.TopRatedVO
+import com.aungpyaesone.firebasetest.padcx_movieapp_aps.mvp.presenters.MovieHomePresenter
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.mvp.presenters.TopRatedMoviePresenter
+import com.aungpyaesone.firebasetest.padcx_movieapp_aps.mvp.presenters.presenterImpls.MovieHomePresenterImpl
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.mvp.presenters.presenterImpls.TopRatedMoviePresenterImpl
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.mvp.views.TopRatedMovieView
 import kotlinx.android.synthetic.main.actor_view_pod.*
@@ -30,7 +34,7 @@ private const val ARG_PARAM2 = "param2"
  */
 class ActionFragment : BaseFragment(), TopRatedMovieView {
     // TODO: Rename and change types of parameters
-    private var param1: String? = null
+    private var param1: Int? = null
     private var param2: String? = null
 
     private lateinit var mPresenter: TopRatedMoviePresenter
@@ -39,8 +43,8 @@ class ActionFragment : BaseFragment(), TopRatedMovieView {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+            param1 = it.getInt(ARG_PARAM1)
+       //     param2 = it.getString(ARG_PARAM2)
         }
     }
 
@@ -56,7 +60,7 @@ class ActionFragment : BaseFragment(), TopRatedMovieView {
         super.onViewCreated(view, savedInstanceState)
         setUpPresenter()
         setUpRecycler()
-        mPresenter.onUiReady(this)
+        mPresenter.onUiReady(param1.toString(),this)
     }
 
     private fun setUpPresenter(){
@@ -82,18 +86,19 @@ class ActionFragment : BaseFragment(), TopRatedMovieView {
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
-        fun newInstance(param1: String, param2: String) =
+        fun newInstance(id: Int) =
             ActionFragment().apply {
                 arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+                    putInt(ARG_PARAM1, id)
+                 //  putString(ARG_PARAM2, param2)
                 }
             }
     }
 
-    override fun showTopRatedMovieList(topMovieList: List<TopRatedVO>) {
-        mAdapter.setData(topMovieList.toMutableList())
+    override fun showTopRatedMovieList(topMovieList: List<MovieWithGenerVO>) {
+        mAdapter.setData(topMovieList)
     }
+
 
     override fun navigateToDetailScreen(id: Int) {
         startActivity(activity?.let { MovieDetailActivity.newIntent(it,id) })
