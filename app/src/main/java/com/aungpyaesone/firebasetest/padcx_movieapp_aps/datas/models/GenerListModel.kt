@@ -7,7 +7,7 @@ import com.aungpyaesone.firebasetest.padcx_movieapp_aps.datas.vos.MovieWithGener
 interface GenerListModel {
     fun getGenersListFromApiSaveToDB(onSuccess:()->Unit,onError:(String) ->Unit)
 
-    fun getMovieWithGereFromApiSaveToDB(gener:String,onSuccess: () -> Unit,onError: (String) -> Unit)
+    fun getMovieWithGereFromApiSaveToDB(gener:String,onSuccess: (List<MovieWithGenerVO>) -> Unit,onError: (String) -> Unit)
 
     fun getMovieWithGenerList():LiveData<List<MovieWithGenerVO>>
 

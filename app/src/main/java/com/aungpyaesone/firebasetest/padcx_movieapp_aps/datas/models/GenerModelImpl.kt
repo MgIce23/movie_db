@@ -25,7 +25,7 @@ object GenerModelImpl : BaseModel(),GenerListModel {
     }
 
     @SuppressLint("CheckResult")
-    override fun getMovieWithGereFromApiSaveToDB(gener:String, onSuccess: () -> Unit, onError: (String) -> Unit) {
+    override fun getMovieWithGereFromApiSaveToDB(gener:String, onSuccess: (List<MovieWithGenerVO>) -> Unit, onError: (String) -> Unit) {
         mClientApi.getWithGenerList(API_KEY,gener).map {
             it?.let{
                 it
@@ -34,7 +34,8 @@ object GenerModelImpl : BaseModel(),GenerListModel {
             .map { it.result.toList() }
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
-                mTheDB.movieGenerDao().insertMovieWithGenerList(it)
+                it?.let{onSuccess(it)}
+           //     mTheDB.movieGenerDao().insertMovieWithGenerList(it)
             },{
                 onError(it.localizedMessage ?: EN_ERROR_MESSAGE)})
     }

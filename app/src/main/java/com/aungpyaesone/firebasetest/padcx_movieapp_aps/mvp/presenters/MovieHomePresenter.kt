@@ -6,7 +6,7 @@ import com.aungpyaesone.firebasetest.padcx_movieapp_aps.delegate.PopularMovieIte
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.delegate.TopRatedMovieItemDelegate
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.mvp.views.MovieHomeView
 
-interface MovieHomePresenter : BasePresenter<MovieHomeView>,ItemDelegate,TopRatedMovieItemDelegate {
+interface MovieHomePresenter : BasePresenter<MovieHomeView>,ItemDelegate, PopularMovieItemDelegate,TopRatedMovieItemDelegate {
 
     fun onUiReady(lifecycleOwner: LifecycleOwner)
 }

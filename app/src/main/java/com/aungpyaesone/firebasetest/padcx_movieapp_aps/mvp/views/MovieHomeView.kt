@@ -14,6 +14,8 @@ interface MovieHomeView : BaseView {
 
     fun navigateToDetail(id: Int)
 
+    fun navigateToMovieDetail(id:Int)
+
     fun sendGenerList(generList:List<GenersVO>)
 
 }

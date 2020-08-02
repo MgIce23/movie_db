@@ -2,7 +2,6 @@ package com.aungpyaesone.firebasetest.padcx_movieapp_aps.views.viewholders
 
 import android.view.View
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.datas.vos.PeopleVO
-import com.aungpyaesone.firebasetest.padcx_movieapp_aps.delegate.PopularMovieItemDelegate
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.utils.IMAGE_BASE_URL
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.actors_creators_item_view.view.*

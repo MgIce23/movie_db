@@ -15,11 +15,12 @@ object GenerListMockModelImpl : GenerListModel {
 
     override fun getMovieWithGereFromApiSaveToDB(
         gener: String,
-        onSuccess: () -> Unit,
+        onSuccess: (List<MovieWithGenerVO>) -> Unit,
         onError: (String) -> Unit
     ) {
 
     }
+
 
     override fun getMovieWithGenerList(): LiveData<List<MovieWithGenerVO>> {
         val liveData = MutableLiveData<List<MovieWithGenerVO>>()

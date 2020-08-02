@@ -53,7 +53,7 @@ class MovieHomeActivity : BaseActivity(), MovieHomeView {
         rvBestFlimandSeries.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
         rvBestFlimandSeries.adapter =mBestPopularFlimAdapter
 
-        mNowPlayingMovieAdapter = NowPlayingMovieAdapter()
+        mNowPlayingMovieAdapter = NowPlayingMovieAdapter(mPresenter)
         rvShowCase.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
         rvShowCase.adapter =mNowPlayingMovieAdapter
 
@@ -86,6 +86,10 @@ class MovieHomeActivity : BaseActivity(), MovieHomeView {
 
     override fun navigateToDetail(id: Int) {
         startActivity(VideoViewActivity.newIntent(this,id))
+    }
+
+    override fun navigateToMovieDetail(id: Int) {
+       startActivity(MovieDetailActivity.newIntent(this,id))
     }
 
     override fun sendGenerList(generList: List<GenersVO>) {

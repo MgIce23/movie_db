@@ -56,7 +56,11 @@ class MovieHomePresenterImpl : MovieHomePresenter,AbstractBasePresenter<MovieHom
         mView?.navigateToDetail(id)
     }
 
+    override fun onTouchPopularMovieItemDelegate(id: Int) {
+        mView?.navigateToMovieDetail(id)
+    }
+
     override fun onTouchRatedMovie(id: Int) {
-        mView?.navigateToDetail(id)
+        mView?.navigateToMovieDetail(id)
     }
 }

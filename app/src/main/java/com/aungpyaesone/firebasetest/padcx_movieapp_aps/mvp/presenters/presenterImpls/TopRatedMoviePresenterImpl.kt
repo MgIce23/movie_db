@@ -21,14 +21,16 @@ class TopRatedMoviePresenterImpl : TopRatedMoviePresenter,AbstractBasePresenter<
 //        }.observe(lifecycleOwner, Observer {
 //            mView?.showTopRatedMovieList(it)
 //        })
-        mGenerList.getMovieWithGereFromApiSaveToDB(gener,{},{
+        mGenerList.getMovieWithGereFromApiSaveToDB(gener,{
+            mView?.showTopRatedMovieList(it)
+        },{
             mView?.showErrorMessage(it)
         })
-        mGenerList.getMovieWithGenerList().observe(
-            lifecycleOwner, Observer {
-                mView?.showTopRatedMovieList(it)
-            }
-        )
+//        mGenerList.getMovieWithGenerList().observe(
+//            lifecycleOwner, Observer {
+//                mView?.showTopRatedMovieList(it)
+//            }
+//        )
     }
 
     override fun onTouchRatedMovie(id: Int) {
