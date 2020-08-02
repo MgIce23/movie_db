@@ -4,9 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activities.MovieDetailActivity">
@@ -21,7 +19,7 @@
     <ImageView
         android:id="@+id/ivPoster"
         android:layout_width="match_parent"
-        android:layout_height="350dp"
+        android:layout_height="320dp"
         android:scaleType="fitXY"
         />
 
@@ -49,119 +47,135 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="200dp"
         >
-        <org.mmtextview.components.MMTextView
-            android:id="@+id/tvYear"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="2016"
-            android:layout_margin="@dimen/margin_medium_2"
-            android:background="@drawable/rounded_drawable"
-            android:paddingTop="@dimen/margin_medium"
-            android:paddingBottom="@dimen/margin_medium"
-            android:paddingStart="@dimen/margin_medium_2"
-            android:paddingEnd="@dimen/margin_medium_2"
-            android:textStyle="bold"
-            android:textColor="@android:color/white"/>
-        
-        <org.mmtextview.components.MMTextView
-            android:id="@+id/tvRating"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="9,75"
-            android:textColor="@android:color/white"
-            android:textSize="@dimen/text_heading_2x"
-            android:layout_alignParentEnd="true"
-            android:layout_margin="@dimen/margin_medium_2"/>
-        
-        <org.mmtextview.components.MMTextView
-            android:id="@+id/tvVote"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="38876 VOTES"
-            android:textColor="@android:color/darker_gray"
-            android:layout_alignBottom="@id/tvRating"
-            android:layout_toStartOf="@id/tvRating"
-            android:textStyle="bold"/>
-        <androidx.appcompat.widget.AppCompatRatingBar
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignTop="@id/tvRating"
-            android:progressTint="@color/yellow"
-            android:backgroundTint="@color/yellow"
-            android:layout_toStartOf="@id/tvRating"
-            style="@style/Widget.AppCompat.RatingBar.Small"
-            android:progressBackgroundTint="@color/yellow"
-            android:rating="5"/>
-
-        <TextView
-            android:id="@+id/tvMovieTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/original_title"
-            android:layout_below="@id/tvRating"
-            android:layout_marginStart="@dimen/margin_medium_2"
-            android:textColor="@android:color/white"
-            android:textSize="@dimen/text_heading_1x"
-            android:textStyle="bold"
-            android:layout_marginEnd="@dimen/margin_medium_2"
-            />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/tvMovieTitle"
+            android:background="@drawable/background_drawable"
+            >
 
-            android:layout_marginTop="@dimen/margin_medium_2">
+            <org.mmtextview.components.MMTextView
+                android:id="@+id/tvYear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_medium_2"
+                android:layout_marginTop="200dp"
+                android:background="@drawable/rounded_drawable"
+                android:paddingStart="@dimen/margin_medium_2"
+                android:paddingTop="@dimen/margin_medium"
+                android:paddingEnd="@dimen/margin_medium_2"
+                android:paddingBottom="@dimen/margin_medium"
+                android:text="2016"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <org.mmtextview.components.MMTextView
+                android:id="@+id/tvRating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_medium_2"
+                android:text="9,75"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/text_heading_2x"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/appCompatRatingBar" />
+
+            <org.mmtextview.components.MMTextView
+                android:id="@+id/tvVote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/tvRating"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_toStartOf="@id/tvRating"
+                android:text="38876 VOTES"
+                android:textColor="@android:color/darker_gray"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/tvRating"
+                app:layout_constraintTop_toBottomOf="@+id/appCompatRatingBar" />
+
+            <androidx.appcompat.widget.AppCompatRatingBar
+                android:id="@+id/appCompatRatingBar"
+                style="@style/Widget.AppCompat.RatingBar.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/tvRating"
+                android:layout_marginEnd="8dp"
+                android:layout_toStartOf="@id/tvRating"
+                android:backgroundTint="@color/yellow"
+                android:progressBackgroundTint="@color/yellow"
+                android:progressTint="@color/yellow"
+                android:rating="5"
+                app:layout_constraintEnd_toStartOf="@+id/tvRating"
+                app:layout_constraintTop_toTopOf="@+id/tvYear" />
+
+            <TextView
+                android:id="@+id/tvMovieTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvRating"
+                android:layout_marginTop="8dp"
+                android:text="@string/original_title"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/text_heading_1x"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/tvRating"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/tvYear"
+                app:layout_constraintTop_toBottomOf="@+id/tvVote" />
 
             <org.mmtextview.components.MMTextView
                 android:id="@+id/tvDuration"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:gravity="center"
+                android:layout_marginTop="16dp"
                 android:drawableStart="@drawable/ic_baseline_access_time_24"
                 android:drawablePadding="@dimen/margin_small"
+                android:gravity="center"
                 android:text="2hr 13mins"
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/text_smaller"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/chipGroup"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="@+id/chipGroup" />
 
             <com.google.android.material.chip.ChipGroup
                 android:id="@+id/chipGroup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
                 android:layout_marginEnd="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/ivFavourite"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/tvDuration"
-                app:layout_constraintTop_toTopOf="parent">
+                app:layout_constraintTop_toBottomOf="@+id/tvMovieTitle">
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/chipOne"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/grey_900"
-                    android:textSize="@dimen/text_smaller"
                     android:text="Family"
-                    android:textColor="@android:color/white" />
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/text_smaller" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/chipTwo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/grey_900"
-                    android:textSize="@dimen/text_smaller"
                     android:text="Fantasy"
-                    android:textColor="@android:color/white" />
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/text_smaller" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/chipThree"
@@ -169,8 +183,8 @@
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/grey_900"
                     android:text="Adventure"
-                    android:textSize="@dimen/text_smaller"
-                    android:textColor="@android:color/white" />
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/text_smaller" />
 
             </com.google.android.material.chip.ChipGroup>
 
@@ -178,17 +192,16 @@
                 android:id="@+id/ivFavourite"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
                 android:layout_weight="1"
                 android:src="@drawable/ic_baseline_favorite_border_24"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/chipGroup"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="@+id/chipGroup" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-
 
         <org.mmtextview.components.MMTextView
             android:id="@+id/labelStoryLine"
@@ -258,25 +271,23 @@
             android:layout_width="match_parent"
             android:layout_height="300dp"
             android:layout_below="@id/tvPlayTrailer"
+            android:layout_marginTop="61dp"
             android:background="@color/dark_grey"
-            android:orientation="vertical"
-            android:layout_marginTop="@dimen/margin_medium"
-            >
+            android:orientation="vertical">
 
             <org.mmtextview.components.MMTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="ACTORS"
-                android:layout_marginTop="@dimen/margin_medium_2"
                 android:layout_marginStart="@dimen/margin_medium_2"
+                android:layout_marginTop="@dimen/margin_medium_2"
+                android:text="ACTORS"
                 android:textColor="@android:color/darker_gray"
-                android:textSize="@dimen/text_regular_2x"
-                />
+                android:textSize="@dimen/text_regular_2x" />
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvActors"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                />
+                android:layout_height="wrap_content" />
         </LinearLayout>
 
         <org.mmtextview.components.MMTextView

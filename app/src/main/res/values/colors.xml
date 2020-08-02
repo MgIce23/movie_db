@@ -8,6 +8,7 @@
     <color name="dark">#151c25</color>
 
     <color name="dark_grey">#1e2634</color>
+    <color name="dark_grey_transparent">#001e2634</color>
     <color name="blue_grey">#263238</color>
 
     <color name="grey_900">#80212121</color>

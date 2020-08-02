@@ -86,7 +86,9 @@ class MovieDetailActivity : BaseActivity() , MovieDetailView{
         tvStoryLine.text = data.overview
         tvOriginalTitle.text = data.original_title
         tvType.text = showType(data.genres)
-        tvProduction.text = data.production_countries.get(0).name
+        if(data.production_countries.isNotEmpty()){
+            tvProduction.text = data.production_countries.get(0).name
+        }
         tvDescription.text = data.overview
     }
 
