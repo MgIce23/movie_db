@@ -5,11 +5,11 @@ import androidx.lifecycle.Observer
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.datas.models.MovieDetailImpl
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.datas.models.MovieDetailModel
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.datas.vos.MovieVO
-import com.aungpyaesone.firebasetest.padcx_movieapp_aps.mvp.presenters.AbstractBasePresenter
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.mvp.presenters.MovieDetailPresenter
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.mvp.views.MovieDetailView
+import com.example.shared.mvp.presenters.AbstractBasePresenter
 
-class MovieDetailPresenterImpl : MovieDetailPresenter,AbstractBasePresenter<MovieDetailView>() {
+class MovieDetailPresenterImpl : MovieDetailPresenter, AbstractBasePresenter<MovieDetailView>() {
 
     var mMovieDetail: MovieDetailModel = MovieDetailImpl
 

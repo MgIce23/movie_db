@@ -3,11 +3,11 @@ package com.aungpyaesone.firebasetest.padcx_movieapp_aps.mvp.presenters.presente
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.Observer
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.datas.models.*
-import com.aungpyaesone.firebasetest.padcx_movieapp_aps.mvp.presenters.AbstractBasePresenter
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.mvp.presenters.MovieHomePresenter
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.mvp.views.MovieHomeView
+import com.example.shared.mvp.presenters.AbstractBasePresenter
 
-class MovieHomePresenterImpl : MovieHomePresenter,AbstractBasePresenter<MovieHomeView>() {
+class MovieHomePresenterImpl : MovieHomePresenter, AbstractBasePresenter<MovieHomeView>() {
    // private val mBestPopularFilAndSerial: BestPopularFilmAndSerialModel = BestPopularFilmAndSerialImpl()
      var mPopularMovie : PopularMovieModel = PopularMovieImpl
      var mNowPalyingMovie : NowPlayingMovieModel = NowPlayingMovieImpl

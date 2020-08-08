@@ -12,6 +12,7 @@ import com.aungpyaesone.firebasetest.padcx_movieapp_aps.datas.vos.PopularMovieVO
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.mvp.presenters.MovieHomePresenter
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.mvp.presenters.presenterImpls.MovieHomePresenterImpl
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.mvp.views.MovieHomeView
+import com.example.shared.activities.BaseActivity
 import kotlinx.android.synthetic.main.activity_movie_detail.rvActors
 import kotlinx.android.synthetic.main.activity_movie_home.*
 import kotlinx.android.synthetic.main.showcase_view_pod.*

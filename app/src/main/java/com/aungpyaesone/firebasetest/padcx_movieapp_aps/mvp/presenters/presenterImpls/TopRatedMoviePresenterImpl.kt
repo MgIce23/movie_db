@@ -1,17 +1,15 @@
 package com.aungpyaesone.firebasetest.padcx_movieapp_aps.mvp.presenters.presenterImpls
 
 import androidx.lifecycle.LifecycleOwner
-import androidx.lifecycle.Observer
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.datas.models.GenerListModel
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.datas.models.GenerModelImpl
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.datas.models.TopRateMovieModel
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.datas.models.TopRatedMovieImpl
-import com.aungpyaesone.firebasetest.padcx_movieapp_aps.datas.vos.TopRatedVO
-import com.aungpyaesone.firebasetest.padcx_movieapp_aps.mvp.presenters.AbstractBasePresenter
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.mvp.presenters.TopRatedMoviePresenter
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.mvp.views.TopRatedMovieView
+import com.example.shared.mvp.presenters.AbstractBasePresenter
 
-class TopRatedMoviePresenterImpl : TopRatedMoviePresenter,AbstractBasePresenter<TopRatedMovieView>() {
+class TopRatedMoviePresenterImpl : TopRatedMoviePresenter, AbstractBasePresenter<TopRatedMovieView>() {
 
     private val mTopRatedMovie: TopRateMovieModel = TopRatedMovieImpl
     private val mGenerList: GenerListModel  = GenerModelImpl

@@ -9,6 +9,7 @@ import com.aungpyaesone.firebasetest.padcx_movieapp_aps.R
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.mvp.presenters.VideoViewPresenter
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.mvp.presenters.presenterImpls.VideoViewPresenterImpl
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.mvp.views.VideoView
+import com.example.shared.activities.BaseActivity
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener
 import kotlinx.android.synthetic.main.video_view_layout.*

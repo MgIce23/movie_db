@@ -16,9 +16,6 @@ const val BASE_URL = "https://api.themoviedb.org/3/"
  const val GET_MOVIE_WITH_GENER = "discover/movie"
 
  const val GET_VIDEO = "movie/{movie_id}/videos"
-
- const val API_KEY = "f29950b90a97d6ced65821a923e55012"
-
-const val EN_ERROR_MESSAGE = "Check your internet connection"
+ const val EN_ERROR_MESSAGE = "Check your internet connection"
 
 

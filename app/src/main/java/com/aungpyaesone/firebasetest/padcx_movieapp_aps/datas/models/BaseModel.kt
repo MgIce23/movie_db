@@ -1,6 +1,7 @@
 package com.aungpyaesone.firebasetest.padcx_movieapp_aps.datas.models
 
 import android.content.Context
+import com.aungpyaesone.firebasetest.padcx_movieapp_aps.BuildConfig
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.network.ClientApi
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.persistence.dbs.MovieDB
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.utils.BASE_URL
@@ -23,7 +24,7 @@ abstract class BaseModel {
             .build()
 
         val retrofit = Retrofit.Builder()
-            .baseUrl(BASE_URL)
+            .baseUrl(BuildConfig.BASE_URL_FIELD)
             .addConverterFactory(GsonConverterFactory.create())
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .client(mOkHttpClient)

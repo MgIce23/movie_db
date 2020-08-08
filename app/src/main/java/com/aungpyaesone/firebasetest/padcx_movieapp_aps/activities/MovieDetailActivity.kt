@@ -3,23 +3,20 @@ package com.aungpyaesone.firebasetest.padcx_movieapp_aps.activities
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import androidx.core.view.size
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.R
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.adapter.ActorListAdapter
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.adapter.CeatorAdapter
-import com.aungpyaesone.firebasetest.padcx_movieapp_aps.adapter.PopularPeopleAdapter
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.datas.vos.*
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.mvp.presenters.MovieDetailPresenter
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.mvp.presenters.presenterImpls.MovieDetailPresenterImpl
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.mvp.views.MovieDetailView
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.utils.IMAGE_BASE_URL
-import com.aungpyaesone.firebasetest.padcx_movieapp_aps.utils.createDynamicChip
 import com.bumptech.glide.Glide
+import com.example.shared.activities.BaseActivity
 import kotlinx.android.synthetic.main.activity_movie_detail.*
 
 class MovieDetailActivity : BaseActivity() , MovieDetailView{

@@ -19,6 +19,7 @@ import com.aungpyaesone.firebasetest.padcx_movieapp_aps.mvp.presenters.TopRatedM
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.mvp.presenters.presenterImpls.MovieHomePresenterImpl
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.mvp.presenters.presenterImpls.TopRatedMoviePresenterImpl
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.mvp.views.TopRatedMovieView
+import com.example.shared.fragments.BaseFragment
 import kotlinx.android.synthetic.main.actor_view_pod.*
 import kotlinx.android.synthetic.main.fragment_action.*
 

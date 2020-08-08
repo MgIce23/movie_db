@@ -8,6 +8,8 @@ buildscript {
     dependencies {
         classpath "com.android.tools.build:gradle:4.0.1"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath 'me.moallemi.gradle:advanced-build-version:1.7.1'
+
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -26,3 +28,16 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+def sensitvieDP = loadSensitiveData()
+ext{
+    verySensitiveData = sensitvieDP.getProperty("MY_API_KEY")
+}
+
+def loadSensitiveData(){
+    Properties sensitiveLoadDataProperties = new Properties()
+    sensitiveLoadDataProperties.load(project.rootProject.file('very_sensitive_data.properties').newDataInputStream())
+    return sensitiveLoadDataProperties
+}
+
+apply from : 'libraries.gradle'

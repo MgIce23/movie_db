@@ -2,9 +2,9 @@ package com.aungpyaesone.firebasetest.padcx_movieapp_aps.datas.models
 
 import android.annotation.SuppressLint
 import androidx.lifecycle.LiveData
+import com.aungpyaesone.firebasetest.padcx_movieapp_aps.BuildConfig
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.datas.vos.GenersVO
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.datas.vos.MovieWithGenerVO
-import com.aungpyaesone.firebasetest.padcx_movieapp_aps.utils.API_KEY
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.utils.EN_ERROR_MESSAGE
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
@@ -13,7 +13,7 @@ object GenerModelImpl : BaseModel(),GenerListModel {
 
     @SuppressLint("CheckResult")
     override fun getGenersListFromApiSaveToDB(onSuccess: () -> Unit, onError: (String) -> Unit) {
-        mClientApi.getGenerList(API_KEY)
+        mClientApi.getGenerList(BuildConfig.MY_API_KEY)
             .map { it.generlist.toList() }
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
@@ -26,7 +26,7 @@ object GenerModelImpl : BaseModel(),GenerListModel {
 
     @SuppressLint("CheckResult")
     override fun getMovieWithGereFromApiSaveToDB(gener:String, onSuccess: (List<MovieWithGenerVO>) -> Unit, onError: (String) -> Unit) {
-        mClientApi.getWithGenerList(API_KEY,gener).map {
+        mClientApi.getWithGenerList(BuildConfig.MY_API_KEY,gener).map {
             it?.let{
                 it
             }

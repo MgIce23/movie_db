@@ -1,5 +1,7 @@
 <resources>
-    <string name="app_name">PADCX-MovieApp-APS</string>
+    <string name="app_name_dev">PADCX-MovieApp-APS</string>
+    <string name="app_name_prod">PADC_MOVIE_PROD</string>
+    <string name="app_name_stag">PADC_MOVIE_STAG</string>
     <string name="hacksaw_ridge">Hacksaw Ridge</string>
     <string name="rating">9.89</string>
     <string name="discover">Discover</string>

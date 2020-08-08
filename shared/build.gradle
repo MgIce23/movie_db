@@ -1,0 +1,84 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 29
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    // communicate with libraries.gradle file
+    implementation rootProject.ext.libraries.glide
+    implementation rootProject.ext.libraries.glideAnotationProcessor
+    implementation rootProject.ext.libraries.appCompact
+    implementation rootProject.ext.libraries.ktx
+    implementation rootProject.ext.libraries.constraintLayout
+
+    implementation rootProject.ext.libraries.room
+    kapt rootProject.ext.libraries.roomKapt
+
+    implementation rootProject.ext.libraries.liveData
+    implementation rootProject.ext.libraries.lifecycleComponent
+    kapt rootProject.ext.libraries.lifecycleKapt
+    kapt rootProject.ext.libraries.lifecyleArcKapt
+
+    implementation rootProject.ext.libraries.rxAndroid
+
+    implementation rootProject.ext.libraries.retrofit
+    implementation rootProject.ext.libraries.retorfitAdapter
+    implementation rootProject.ext.libraries.retrofitGsonConverter
+
+    implementation rootProject.ext.libraries.rxKotlin
+    implementation rootProject.ext.libraries.rxIoReactive
+    implementation rootProject.ext.libraries.swipeRefresh
+    implementation rootProject.ext.libraries.okhttp
+    implementation rootProject.ext.libraries.material
+    implementation rootProject.ext.libraries.workmanager
+    implementation rootProject.ext.libraries.smartiest
+    implementation rootProject.ext.libraries.youtubeplayer
+
+    // Local Unit Tests
+    testImplementation rootProject.ext.libraries.junit
+
+    testImplementation rootProject.ext.libraries.junitKtx
+    testImplementation rootProject.ext.libraries.juniTextCore
+
+    testImplementation rootProject.ext.libraries.robolectric
+    testImplementation rootProject.ext.libraries.mockK
+    testImplementation rootProject.ext.libraries.mockito
+    testImplementation rootProject.ext.libraries.extJunitTest
+
+    // Android Device Test
+    testImplementation rootProject.ext.libraries.espresso
+    testImplementation rootProject.ext.libraries.testRule
+    testImplementation rootProject.ext.libraries.testRunner
+    testImplementation rootProject.ext.libraries.testCoreKtx
+    testImplementation rootProject.ext.libraries.espressoContrib
+    testImplementation rootProject.ext.libraries.androidmokito
+    testImplementation rootProject.ext.libraries.extJunit
+
+}

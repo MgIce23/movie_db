@@ -6,6 +6,7 @@ import com.aungpyaesone.firebasetest.padcx_movieapp_aps.datas.vos.TopRatedVO
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.delegate.TopRatedMovieItemDelegate
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.utils.IMAGE_BASE_URL
 import com.bumptech.glide.Glide
+import com.example.shared.views.viewholder.BaseViewHolder
 
 import kotlinx.android.synthetic.main.movie_poster_item_view.view.*
 
