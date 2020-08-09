@@ -5,6 +5,7 @@ import androidx.lifecycle.LiveData
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.BuildConfig
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.datas.vos.MovieResultVO
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.datas.vos.PopularMovieVO
+import com.aungpyaesone.firebasetest.padcx_movieapp_aps.utils.API_KEY
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.utils.EN_ERROR_MESSAGE
 import io.reactivex.Scheduler
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -16,7 +17,7 @@ object PopularMovieImpl : BaseModel(),PopularMovieModel {
         onSuccess: () -> Unit,
         onError: (String) -> Unit
     ) {
-        mClientApi.getPopularMovies(BuildConfig.MY_API_KEY)
+        mClientApi.getPopularMovies(API_KEY)
             .map {
                 it.result.toList() ?: listOf()
             }.subscribeOn(Schedulers.io())
@@ -38,7 +39,7 @@ object PopularMovieImpl : BaseModel(),PopularMovieModel {
 
     @SuppressLint("CheckResult")
     override fun getVideoFromApi(movieId:Int, onSuccess: (List<MovieResultVO>) -> Unit, onError: (String) -> Unit) {
-        mClientApi.getVideo(movieId,BuildConfig.MY_API_KEY).map {
+        mClientApi.getVideo(movieId,API_KEY).map {
             it.result.toList()
         }.subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())

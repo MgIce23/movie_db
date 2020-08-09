@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import androidx.lifecycle.LiveData
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.BuildConfig
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.datas.vos.PeopleVO
+import com.aungpyaesone.firebasetest.padcx_movieapp_aps.utils.API_KEY
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.utils.EN_ERROR_MESSAGE
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
@@ -12,7 +13,7 @@ object PopularPeopleImpl : BaseModel(),PopularPeopleModel {
 
     @SuppressLint("CheckResult")
     override fun getPopularPeopleFromApiSaveToDB(onSuccess: () -> Unit, onError: (String) -> Unit) {
-        mClientApi.getPopularPeople(BuildConfig.MY_API_KEY)
+        mClientApi.getPopularPeople(API_KEY)
             .map {
                 it.result.toList()
             }.subscribeOn(Schedulers.io())

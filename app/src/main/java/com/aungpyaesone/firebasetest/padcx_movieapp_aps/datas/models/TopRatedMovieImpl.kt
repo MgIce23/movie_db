@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import androidx.lifecycle.LiveData
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.BuildConfig
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.datas.vos.TopRatedVO
+import com.aungpyaesone.firebasetest.padcx_movieapp_aps.utils.API_KEY
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.utils.EN_ERROR_MESSAGE
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
@@ -11,7 +12,7 @@ import io.reactivex.schedulers.Schedulers
 object TopRatedMovieImpl : BaseModel(),TopRateMovieModel {
     @SuppressLint("CheckResult")
     override fun getTopMovieFromApiSaveToDB(onSuccess: () -> Unit, onError: (String) -> Unit) {
-        mClientApi.getTopRatedMovies(BuildConfig.MY_API_KEY)
+        mClientApi.getTopRatedMovies(API_KEY)
             .map { it.result.toList() }
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())

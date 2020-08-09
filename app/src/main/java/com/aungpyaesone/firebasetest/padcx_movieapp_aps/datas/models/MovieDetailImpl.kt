@@ -6,6 +6,7 @@ import com.aungpyaesone.firebasetest.padcx_movieapp_aps.BuildConfig
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.datas.vos.CastAndCrewVO
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.datas.vos.MovieVO
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.datas.vos.PeopleVO
+import com.aungpyaesone.firebasetest.padcx_movieapp_aps.utils.API_KEY
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.utils.EN_ERROR_MESSAGE
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
@@ -16,7 +17,7 @@ object MovieDetailImpl: BaseModel(), MovieDetailModel{
         onSuccess: () -> Unit,
         onError: (String) -> Unit
     ) {
-        mClientApi.getMovieDetails(movieId, BuildConfig.MY_API_KEY)
+        mClientApi.getMovieDetails(movieId, API_KEY)
             .map { it?.let { it } }
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
@@ -41,7 +42,7 @@ object MovieDetailImpl: BaseModel(), MovieDetailModel{
         onSuccess: () -> Unit,
         onError: (String) -> Unit
     ) {
-        mClientApi.getCastAndCrew(id, BuildConfig.MY_API_KEY)
+        mClientApi.getCastAndCrew(id, API_KEY)
             .map {
                it
             }.subscribeOn(Schedulers.io())

@@ -1,9 +1,13 @@
 package com.aungpyaesone.firebasetest.padcx_movieapp_aps.utils
 
+import com.aungpyaesone.firebasetest.padcx_movieapp_aps.BuildConfig
+
 const val BASE_URL = "https://api.themoviedb.org/3/"
 
  const val IMAGE_BASE_URL = "https://image.tmdb.org/t/p/w500/"
  const val GET_NOW_PLAYING_MOVIES = "movie/now_playing"
+
+ const val API_KEY = BuildConfig.MY_API_KEY
 
  const val GET_P0PULAR_MOVIES = "movie/popular"
  const val GET_POPULAR_ACTOR = "person/popular"

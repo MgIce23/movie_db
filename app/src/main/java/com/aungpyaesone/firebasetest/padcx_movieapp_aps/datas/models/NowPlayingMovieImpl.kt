@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import androidx.lifecycle.LiveData
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.BuildConfig
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.datas.vos.NowPlayingVO
+import com.aungpyaesone.firebasetest.padcx_movieapp_aps.utils.API_KEY
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.utils.EN_ERROR_MESSAGE
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
@@ -14,7 +15,7 @@ object NowPlayingMovieImpl : BaseModel(),NowPlayingMovieModel {
         onSuccess: () -> Unit,
         onFailure: (String) -> Unit
     ) {
-       mClientApi.getNowPlayingMovie(BuildConfig.MY_API_KEY)
+       mClientApi.getNowPlayingMovie(API_KEY)
            .map {
                it?.result.toList() }
            .subscribeOn(Schedulers.io())
