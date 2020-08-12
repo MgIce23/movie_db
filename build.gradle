@@ -36,7 +36,7 @@ ext{
 
 def loadSensitiveData(){
     Properties sensitiveLoadDataProperties = new Properties()
-    sensitiveLoadDataProperties.load(project.rootProject.file('very_sensitive_data.properties').newDataInputStream())
+    sensitiveLoadDataProperties.load(project.rootProject.file('sensitive_data.properties').newDataInputStream())
     return sensitiveLoadDataProperties
 }
 
