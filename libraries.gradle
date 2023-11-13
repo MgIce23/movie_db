@@ -12,7 +12,7 @@ ext{
     okhttpVersion = "4.1.0"
     materialVersion = "1.3.0-alpha01"
     workmanagerVersion = "2.3.1"
-    smartiestVersion = "1.3.9-appcompat"
+    smartiestVersion = "1.4.0-appcompat"
     youtubeplayerVersion = "10.0.5"
 
     junitVersion = "4.12"

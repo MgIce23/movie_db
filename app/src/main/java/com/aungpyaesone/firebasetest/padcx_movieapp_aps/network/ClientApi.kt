@@ -1,11 +1,19 @@
 package com.aungpyaesone.firebasetest.padcx_movieapp_aps.network
 
+import com.aungpyaesone.firebasetest.padcx_movieapp_aps.datas.dummy.utils.GET_CAST_AND_CREW
+import com.aungpyaesone.firebasetest.padcx_movieapp_aps.datas.dummy.utils.GET_GENERS_LIST
+import com.aungpyaesone.firebasetest.padcx_movieapp_aps.datas.dummy.utils.GET_MOVIE_DETAILS
+import com.aungpyaesone.firebasetest.padcx_movieapp_aps.datas.dummy.utils.GET_MOVIE_WITH_GENER
+import com.aungpyaesone.firebasetest.padcx_movieapp_aps.datas.dummy.utils.GET_NOW_PLAYING_MOVIES
+import com.aungpyaesone.firebasetest.padcx_movieapp_aps.datas.dummy.utils.GET_P0PULAR_MOVIES
+import com.aungpyaesone.firebasetest.padcx_movieapp_aps.datas.dummy.utils.GET_POPULAR_ACTOR
+import com.aungpyaesone.firebasetest.padcx_movieapp_aps.datas.dummy.utils.GET_TOP_RATED_MOVIES
+import com.aungpyaesone.firebasetest.padcx_movieapp_aps.datas.dummy.utils.GET_VIDEO
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.datas.vos.CastAndCrewVO
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.datas.vos.GenersVO
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.datas.vos.MovieVO
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.datas.vos.MovieWithGenerVO
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.network.responses.*
-import com.aungpyaesone.firebasetest.padcx_movieapp_aps.utils.*
 import io.reactivex.Observable
 import retrofit2.http.GET
 import retrofit2.http.Path

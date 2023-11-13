@@ -12,7 +12,7 @@
         android:scaleType="centerCrop"
         android:src="@drawable/poster"/>
 
-    <org.mmtextview.components.MMTextView
+    <TextView
         android:id="@+id/tvMovieTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -25,7 +25,7 @@
         android:textSize="@dimen/text_regular"
         />
 
-    <org.mmtextview.components.MMTextView
+    <TextView
         android:id="@+id/ivMovieRate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

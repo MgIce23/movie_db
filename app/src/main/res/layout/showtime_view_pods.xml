@@ -5,7 +5,7 @@
     android:background="@color/dark_grey"
     >
 
-    <org.mmtextview.components.MMTextView
+    <TextView
         android:id="@+id/tvShowTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -18,7 +18,7 @@
         android:textSize="@dimen/text_heading_1x"
         android:text="Check Movie Showtimes"/>
 
-    <org.mmtextview.components.MMTextView
+    <TextView
         android:id="@+id/tvSeeMore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

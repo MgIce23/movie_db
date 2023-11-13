@@ -14,7 +14,7 @@ import com.aungpyaesone.firebasetest.padcx_movieapp_aps.datas.vos.*
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.mvp.presenters.MovieDetailPresenter
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.mvp.presenters.presenterImpls.MovieDetailPresenterImpl
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.mvp.views.MovieDetailView
-import com.aungpyaesone.firebasetest.padcx_movieapp_aps.utils.IMAGE_BASE_URL
+import com.aungpyaesone.firebasetest.padcx_movieapp_aps.datas.dummy.utils.IMAGE_BASE_URL
 import com.bumptech.glide.Glide
 import com.example.shared.activities.BaseActivity
 import kotlinx.android.synthetic.main.activity_movie_detail.*

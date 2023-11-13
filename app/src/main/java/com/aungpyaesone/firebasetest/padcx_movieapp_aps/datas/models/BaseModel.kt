@@ -4,7 +4,7 @@ import android.content.Context
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.BuildConfig
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.network.ClientApi
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.persistence.dbs.MovieDB
-import com.aungpyaesone.firebasetest.padcx_movieapp_aps.utils.BASE_URL
+import com.aungpyaesone.firebasetest.padcx_movieapp_aps.datas.dummy.utils.BASE_URL
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory

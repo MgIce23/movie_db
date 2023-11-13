@@ -2,14 +2,14 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent">
 
-    <org.mmtextview.components.MMTextView
+    <TextView
         android:id="@+id/tvLabelTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         style="@style/LabelTextStyle"
         android:text="Original title"/>
 
-    <org.mmtextview.components.MMTextView
+    <TextView
         android:id="@+id/tvOriginalTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -21,7 +21,7 @@
         android:textColor="@android:color/white"
         />
 
-    <org.mmtextview.components.MMTextView
+    <TextView
         android:id="@+id/tvLabelType"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -29,7 +29,7 @@
         style="@style/LabelTextStyle"
         android:layout_below="@id/tvOriginalTitle"
         android:layout_marginTop="@dimen/margin_medium_2"/>
-    <org.mmtextview.components.MMTextView
+    <TextView
         android:id="@+id/tvType"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -39,7 +39,7 @@
         android:layout_alignStart="@id/tvOriginalTitle"
         />
 
-    <org.mmtextview.components.MMTextView
+    <TextView
         android:id="@+id/tvLabelProduction"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -47,7 +47,7 @@
         android:layout_below="@id/tvType"
         android:layout_marginTop="@dimen/margin_medium_2"
         style="@style/LabelTextStyle"/>
-    <org.mmtextview.components.MMTextView
+    <TextView
         android:id="@+id/tvProduction"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -56,7 +56,7 @@
         style="@style/AbooutFlimTextStyle"
         android:text="@string/united_kingdom_usa"/>
 
-    <org.mmtextview.components.MMTextView
+    <TextView
         android:id="@+id/tvLabelPremiere"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -74,7 +74,7 @@
         android:layout_alignTop="@id/tvLabelPremiere"
         android:layout_alignStart="@id/tvProduction"/>
 
-    <org.mmtextview.components.MMTextView
+    <TextView
         android:id="@+id/tvLabelDescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -83,7 +83,7 @@
         android:layout_marginTop="@dimen/margin_medium_2"
         style="@style/LabelTextStyle"/>
 
-    <org.mmtextview.components.MMTextView
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="This Films Begins In 1926"

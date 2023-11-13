@@ -1,4 +1,4 @@
-package com.aungpyaesone.firebasetest.padcx_movieapp_aps.utils
+package com.aungpyaesone.firebasetest.padcx_movieapp_aps.datas.dummy.utils
 
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.BuildConfig
 

@@ -2,7 +2,7 @@ package com.aungpyaesone.firebasetest.padcx_movieapp_aps.views.viewholders
 
 import android.view.View
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.datas.vos.CastVO
-import com.aungpyaesone.firebasetest.padcx_movieapp_aps.utils.IMAGE_BASE_URL
+import com.aungpyaesone.firebasetest.padcx_movieapp_aps.datas.dummy.utils.IMAGE_BASE_URL
 import com.bumptech.glide.Glide
 import com.example.shared.views.viewholder.BaseViewHolder
 import kotlinx.android.synthetic.main.actors_creators_item_view.view.*

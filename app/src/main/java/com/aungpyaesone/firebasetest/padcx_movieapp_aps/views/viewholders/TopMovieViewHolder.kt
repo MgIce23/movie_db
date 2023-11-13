@@ -4,7 +4,7 @@ import android.view.View
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.datas.vos.MovieWithGenerVO
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.datas.vos.TopRatedVO
 import com.aungpyaesone.firebasetest.padcx_movieapp_aps.delegate.TopRatedMovieItemDelegate
-import com.aungpyaesone.firebasetest.padcx_movieapp_aps.utils.IMAGE_BASE_URL
+import com.aungpyaesone.firebasetest.padcx_movieapp_aps.datas.dummy.utils.IMAGE_BASE_URL
 import com.bumptech.glide.Glide
 import com.example.shared.views.viewholder.BaseViewHolder
 

@@ -4,7 +4,7 @@
     android:layout_height="wrap_content"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <org.mmtextview.components.MMTextView
+    <TextView
         android:id="@+id/tvShowCase"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -13,7 +13,7 @@
         android:layout_marginTop="@dimen/margin_medium_2"
         android:layout_marginStart="@dimen/margin_medium_2"/>
 
-    <org.mmtextview.components.MMTextView
+    <TextView
         android:id="@+id/tvMoreShowCase"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
